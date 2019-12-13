@@ -40,9 +40,7 @@ body {
     position:absolute;
     bottom:371px;
     animation: bounce 1s infinite; 
-    
-    
-    }
+}
 @keyframes bounce {
     0%   { transform: translateY(6px); }
     5%   { transform: translateY(8px); }
@@ -76,6 +74,11 @@ body {
     animation: bounce 1s infinite
     
 }
+/*
+
+You don't have to do this for every element you want to animate. Once it's defined
+you can use it for as many elements as you want.
+
 @keyframes bounce {
     0%   { transform: translateY(6px); }
     5%   { transform: translateY(8px); }
@@ -97,7 +100,7 @@ body {
     90%  { transform: translateY(8px); }
     95%  { transform: translateY(5px); }
     100% { transform: translateY(5px); }
-}
+}*/
 
 .hurdle {
     height:75px;
@@ -105,14 +108,17 @@ body {
     background-color:darkred;
 } 
 
+/* The position of the hurdles will be set by the js, so this whole section below will not be needed */
+
 .hurdle1p {
-    position:absolute;
+    position:absolute; /* since all hurdles are position:absolute, this should be moved to .hurlde 
+    so you are not repeating it for every hurdle*/
     bottom:225px;
     left:400px;   
 }
 
 .hurdle2p {
-    position:absolute;
+    position:absolute; 
     bottom:225px;
     left:1000px;   
 }
@@ -148,5 +154,3 @@ line-height:150px;
     left:500px;
     
 }
-
-
