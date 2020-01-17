@@ -149,3 +149,31 @@ var Hurdle1 = new Hurdle(200, 225, 65, 17, "darkred");
 var Hurdle1 = new Hurdle(400, 225, 110, 15, "darkred");
 var Hurdle1 = new Hurdle(600, 225, 50, 10, "darkred");
 var Hurdle1 = new Hurdle(800, 225, 125, 15, "darkred");
+function inside ()
+
+    var rect1 = {x: 200, y: 225, width: 17, height: 65}
+    var rect2 = {x: 400, y: 225, width: 15, height: 110}
+
+if (rect1.x < rect2.x + rect2.width &&
+   rect1.x + rect1.width > rect2.x &&
+   rect1.y < rect2.y + rect2.height &&
+   rect1.y + rect1.height > rect2.y) {
+        alert("You lose") ;
+}
+
+// filling in the values =>
+
+if (200 < 415 &&
+    217 > 400 &&
+    225 < 335 &&
+    290 > 225) {
+      alert("You lose") ;
+}
+
+getPosition() ;
+        return [left, bottom];
+        [200,217]
+        [225,290]
+    if (200>x>217) 
+        alert("You lose") ;
+
