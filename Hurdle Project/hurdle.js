@@ -12,10 +12,6 @@ class Hurdle {
         $('body').append ("<div class='hurdle' style='bottom:" + this.bottom + "px; left:" + this.left + "px; height: " + this.height + "px; width:" + this.width + "px; background-color:" + this.color + "'></div>");        
    
     }
-    isInside(){
-        return true;
-    }
-
         
 }
 
@@ -68,4 +64,3 @@ var Hurdle1 = new Hurdle(200, 225, 65, 17, "darkred");
 var Hurdle1 = new Hurdle(400, 225, 110, 15, "darkred");
 var Hurdle1 = new Hurdle(600, 225, 50, 10, "darkred");
 var Hurdle1 = new Hurdle(800, 225, 125, 15, "darkred");
-
