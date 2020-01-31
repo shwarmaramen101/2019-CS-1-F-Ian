@@ -33,14 +33,14 @@ body {
     bottom:175px;
 }
 
-/*.runner {
+.runner {
     height:150px;
     width:25px;
     background-color:white;
     position:absolute;
     bottom:371px;
     animation: bounce 1s infinite;
-}*/
+}
 @keyframes bounce {
     0%   { transform: translateY(6px); }
     5%   { transform: translateY(8px); }
@@ -82,7 +82,7 @@ position:absolute;
 
 /* The position of the hurdles will be set by the js, so this whole section below will not be needed */
 
-/.Hurdle1p {
+.Hurdle1p {
     position:absolute; /* since all hurdles are position:absolute, this should be moved to .hurlde 
     so you are not repeating it for every hurdle*/
     bottom:225px;
