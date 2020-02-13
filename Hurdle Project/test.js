@@ -24,58 +24,32 @@ class Runner {
         this.color = color;
         this.addRunner();
         this.speed = 50;
+        this.bounce();
+        this.id;
+        this.length;
 
+    }
+    bounce(){
+        tweenMax.to("runner" + this.id,1.2,{y:150, delay:0, ease:Sine.easeOut});
     }
     
 
-    }
-
     addRunner(){
         console.log(this.bottom,this.left,this.height,this.width,this.color);
-        $('body').append ("<div class='runner' style='bottom:" + this.bottom + "px; left:" + this.left + "px; height: " + this.height + "px; width:" + this.width + "px; background-color:" + this.color + "'></div>");        
+        this.id = var runner + .length;
+        $('body').append ("<div id='runner" + this.id + "' class='runner' style='bottom:" + this.bottom + "px; left:" + this.left + "px; height: " + this.height + "px; width:" + this.width + "px; background-color:" + this.color + "'></div>");        
    
-    }
-/*bounce(){
-        TweenLite.set (".runner",{
-            bottom: 200,
-            left: 0
-        
-        });
-        to(".runner", 0.5, {
-        transformOrigin: "50% 50%",
-        y: 90,
-        ease: Bounce.easeOut
-      }, "bounce")
-
-
-      .to("runner", 0.4, {
-        transformOrigin: "50% 50%",
-        y: 279,
-        ease: Circ.easeIn
-
-      }, "bounce2")
-    }*/
+    }}
 
 
 
+                    
 var Hurdle1 = new Hurdle(200, 225, 65, 17, "darkred");
 var Hurdle2 = new Hurdle(400, 225, 110, 15, "darkred");
 var Hurdle3 = new Hurdle(600, 225, 50, 10, "darkred");
 var Hurdle4 = new Hurdle(800, 225, 125, 15, "darkred");
 var runner =  new Runner (10, 371, 150, 25, "blue")
 
-/*var bounce = new Bounce();
-bounce.scale({
-  from: { x: 0.5, y: 0.5 },
-  to: { x: 1, y: 1 }
-})
-bounce.translate({
-  from: { y: 0 },
-  to: { y: 150 }
-});
-
-bounce.define("runner");
-; */
 
 
 $(document).keydown(function(e) { 
@@ -100,14 +74,8 @@ $(document).keydown(function(e) {
             
         }); 
         runner.left += runner.speed;
-        bounce()
-        TweenMax.to(".runner", 1.2,{x:0, y:200, ease:Sine.easeOut});
 
 
-
-        }
-
-        //runner.bottom += runner.jump;
             
             //console.log("runner-height",runner.height);
             //console.log("runner-width",runner.width);
