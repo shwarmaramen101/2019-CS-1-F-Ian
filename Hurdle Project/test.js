@@ -27,21 +27,18 @@ class Runner {
         this.speed = 50;
         this.bounce();
         this.id = "runner" + $(".runner").length;
-
-
     }
     bounce(){
         TweenMax.to("runner" + this.id,1.2,{bottom:1000, delay:0, ease:Sine.easeOut});
         TweenMax.to("runner" + this.id,1.2,{y:150, delay:0, ease:Sine.easeOut});
-            } 
-    
-
+    } 
     addRunner(){
         console.log(this.bottom,this.left,this.height,this.width,this.color);
         $('body').append ("<div id='" + this.id + "' class='runner' style='bottom:" + this.bottom + "px; left:" + this.left + "px; height: " + this.height + "px; width:" + this.width + "px; background-color:" + this.color + "'></div>");        
         this.id = "runner" + $(".runner").length;
 
-    }}
+    }
+}
 
 
                     
