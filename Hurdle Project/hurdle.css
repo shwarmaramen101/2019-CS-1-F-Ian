@@ -41,7 +41,7 @@ body {
     bottom:371px;
     animation: bounce 1s infinite;
 }
-/*@keyframes bounce {
+@keyframes bounce {
     0%   { transform: translateY(6px); }
     5%   { transform: translateY(8px); }
     10%  { transform: translateY(12px); }

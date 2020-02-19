@@ -15,6 +15,7 @@ class Hurdle {
 
         
 }
+
 class Runner {
     constructor(x, y, height, width, color) {
         this.bottom = y;
@@ -25,22 +26,22 @@ class Runner {
         this.addRunner();
         this.speed = 50;
         this.bounce();
-        this.id;
-        this.length;
+        this.id = "runner" + $(".runner").length;
+
 
     }
     bounce(){
-        tweenMax.to("runner" + this.id,1.2,{y:150, delay:0, ease:Sine.easeOut});
-    }
+        TweenMax.to("runner" + this.id,1.2,{bottom:1000, delay:0, ease:Sine.easeOut});
+        TweenMax.to("runner" + this.id,1.2,{y:150, delay:0, ease:Sine.easeOut});
+            } 
     
 
     addRunner(){
         console.log(this.bottom,this.left,this.height,this.width,this.color);
-        this.id = var runner + .length;
-        $('body').append ("<div id='runner" + this.id + "' class='runner' style='bottom:" + this.bottom + "px; left:" + this.left + "px; height: " + this.height + "px; width:" + this.width + "px; background-color:" + this.color + "'></div>");        
-   
-    }}
+        $('body').append ("<div id='" + this.id + "' class='runner' style='bottom:" + this.bottom + "px; left:" + this.left + "px; height: " + this.height + "px; width:" + this.width + "px; background-color:" + this.color + "'></div>");        
+        this.id = "runner" + $(".runner").length;
 
+    }}
 
 
                     
@@ -48,7 +49,9 @@ var Hurdle1 = new Hurdle(200, 225, 65, 17, "darkred");
 var Hurdle2 = new Hurdle(400, 225, 110, 15, "darkred");
 var Hurdle3 = new Hurdle(600, 225, 50, 10, "darkred");
 var Hurdle4 = new Hurdle(800, 225, 125, 15, "darkred");
-var runner =  new Runner (10, 371, 150, 25, "blue")
+var runner =  new Runner (10, 371, 150, 25, "blue");
+//var runner = new Runner (50, 371, 150, 25, "red");
+
 
 
 
@@ -69,10 +72,17 @@ $(document).keydown(function(e) {
  
     if (e.which == '39') { //right arrow key 
         $(".runner").finish().animate({ 
-            left: "+=" + runner.speed  
-            //top: "+=" + runner.jump + 
-            
-        }); 
+            left: "+=" + runner.speed 
+
+        })    
+        //$(".runner").bounce().animate({
+
+
+        //})
+
+        
+        
+      
         runner.left += runner.speed;
 
 
@@ -96,3 +106,4 @@ $(document).keydown(function(e) {
      
 
 });             
+console.log ("id",runner.id)
