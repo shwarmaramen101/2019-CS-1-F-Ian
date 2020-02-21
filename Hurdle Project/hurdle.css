@@ -74,7 +74,10 @@ body {
     animation: bounce 1s infinite
     
 }
+.addClass { 
+    background-color: yellowgreen ! important ;
 
+}
 
 .hurdle {
 position:absolute;    
@@ -82,12 +85,12 @@ position:absolute;
 
 /* The position of the hurdles will be set by the js, so this whole section below will not be needed */
 
-.Hurdle1p {
+/*.Hurdle1p {
     position:absolute; /* since all hurdles are position:absolute, this should be moved to .hurlde 
     so you are not repeating it for every hurdle*/
-    bottom:225px;
+    /*bottom:225px;
     left:400px;   
-}
+}*/
 
 .Hurdle2p {
     position:absolute; 

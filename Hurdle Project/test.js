@@ -25,16 +25,23 @@ class Runner {
         this.color = color;
         this.addRunner();
         this.speed = 50;
-        this.bounce();
+        //this.bounce();
         this.id = "runner" + $(".runner").length;
+        this.addClass();
 
 
     }
-    bounce(){
+    addClass(){
+
+
+    }
+
+
+    /*bounce(){
         TweenMax.to("runner" + this.id,1.2,{bottom:1000, delay:0, ease:Sine.easeOut});
         TweenMax.to("runner" + this.id,1.2,{y:150, delay:0, ease:Sine.easeOut});
             } 
-    
+*/
 
     addRunner(){
         console.log(this.bottom,this.left,this.height,this.width,this.color);
@@ -42,19 +49,6 @@ class Runner {
         this.id = "runner" + $(".runner").length;
 
     }}
-
-
-                    
-var Hurdle1 = new Hurdle(200, 225, 65, 17, "darkred");
-var Hurdle2 = new Hurdle(400, 225, 110, 15, "darkred");
-var Hurdle3 = new Hurdle(600, 225, 50, 10, "darkred");
-var Hurdle4 = new Hurdle(800, 225, 125, 15, "darkred");
-var runner =  new Runner (10, 371, 150, 25, "blue");
-//var runner = new Runner (50, 371, 150, 25, "red");
-
-
-
-
 $(document).keydown(function(e) { 
  
 
@@ -64,7 +58,7 @@ $(document).keydown(function(e) {
         }); 
     } 
  
-        if (e.which == '40') { //down arrow key 
+    if (e.which == '40') { //down arrow key 
         $(".runner").finish().animate({ 
             top: "+=50" 
         }); 
@@ -74,14 +68,12 @@ $(document).keydown(function(e) {
         $(".runner").finish().animate({ 
             left: "+=" + runner.speed 
 
-        })    
-        //$(".runner").bounce().animate({
-
-
-        //})
-
-        
-        
+        });
+    if (e.which == '38') {
+        $("runner").finish().animate({
+            top: "-=50"        
+        });    
+    }
       
         runner.left += runner.speed;
 
@@ -96,14 +88,27 @@ $(document).keydown(function(e) {
             //console.log("hurdle-left",Hurdle1.left);
             //console.log("hurdle-bottom",Hurdle1.bottom);
             if (runner.left < Hurdle1.left + Hurdle1.width &&
-            runner.left + runner.width > Hurdle1.left) //&&
+            runner.left + runner.width > Hurdle1.left); //&&
             //runner.bottom < Hurdle1.bottom + Hurdle1.heigh &&
-            //runner.bottom + runner.height > Hurdle1.bottom)
-    
+            //runner.bottom + runner.height > Hurdle1.bottom);
+                $(document) this.addClass()
                 alert("You Lose!");
             
 }             
      
 
-});             
+});     
+
+                    
+var Hurdle1 = new Hurdle(200, 225, 65, 17, "darkred");
+var Hurdle2 = new Hurdle(400, 225, 110, 15, "darkred");
+var Hurdle3 = new Hurdle(600, 225, 50, 10, "darkred");
+var Hurdle4 = new Hurdle(800, 225, 125, 15, "darkred");
+var runner =  new Runner (10, 371, 150, 25, "blue");
+//var runner = new Runner (50, 371, 150, 25, "red");
+
+
+
+
+        
 console.log ("id",runner.id)
