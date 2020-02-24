@@ -32,7 +32,7 @@ class Runner {
 
     }
     addClass(){
-
+    //(addClass,function(_index, "runner"))
 
     }
 
@@ -70,7 +70,7 @@ $(document).keydown(function(e) {
 
         });
     if (e.which == '38') {
-        $("runner").finish().animate({
+        $(".runner").finish().animate({
             top: "-=50"        
         });    
     }
@@ -91,7 +91,7 @@ $(document).keydown(function(e) {
             runner.left + runner.width > Hurdle1.left); //&&
             //runner.bottom < Hurdle1.bottom + Hurdle1.heigh &&
             //runner.bottom + runner.height > Hurdle1.bottom);
-                $(document) this.addClass()
+                $(document) .addClass();
                 alert("You Lose!");
             
 }             
