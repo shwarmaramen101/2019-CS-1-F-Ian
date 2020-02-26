@@ -39,7 +39,7 @@ body {
     background-color:white;
     position:absolute;
     bottom:371px;
-    animation: bounce 1s infinite;
+    /*animation: bounce 1s infinite;*/
 }
 @keyframes bounce {
     0%   { transform: translateY(6px); }
