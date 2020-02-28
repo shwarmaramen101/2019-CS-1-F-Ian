@@ -27,73 +27,71 @@ class Runner {
         this.speed = 50;
         //this.bounce();
         this.id = "runner" + $(".runner").length;
-        this.addClass();
-
-
-    }
-    addClass(){
-    //(_index, "runner"))
+        //this.addClass();
+        this.move();
+        this.collision();
 
     }
+    /*addClass(){
+    (_index, "runner"))
 
-
-   //bounce(){
-        //TweenMax.to("runner" + this.id,1.2,{bottom:1000, delay:0, ease:Sine.easeOut});
-        //TweenMax.to("runner" + this.id,1.2,{y:150, delay:0, ease:Sine.easeOut});
-            //} 
-    
+    }
+   bounce(){
+        TweenMax.to("runner" + this.id,1.2,{bottom:1000, delay:0, ease:Sine.easeOut});
+        TweenMax.to("runner" + this.id,1.2,{y:150, delay:0, ease:Sine.easeOut});
+            } 
+    */
     collision(){
         return this.left+this.width >= Hurdle1.left &&
         this.left <= Hurdle1.left+Hurdle1.width &&
         this.bottom <= Hurdle1.bottom+Hurdle1.height &&
         this.bottom+this.height >= Hurdle1.bottom;
 
+        
+
     }
 
     move(direction){
 
-    if (e.which == '37') { //down arrow key 
+    if (direction == '37') { //down arrow key 
         this.left -= runner.speed;
         $(".runner").finish().animate({ 
             left: this.left 
         }); 
     } 
  
-    if (e.which == '40') { //down arrow key 
+    if (direction == '38') { //down arrow key 
         this.bottom += runner.speed;
         $(".runner").finish().animate({ 
             bottom: this.bottom
         }); 
     } 
  
-    if (e.which == '39') { //right arrow key 
+    if (direction == '39') { //right arrow key 
         this.left += runner.speed;
         $(".runner").finish().animate({ 
             left: this.left 
 
         });
-    if (e.which == '38') {
+    }
+    if (direction == '40') {
         this.bottom -= runner.speed;
         $(".runner").finish().animate({
             bottom: this.bottom  
         });    
-        var collision = this.collision
+    }
+        var collision = this.collision();
 
+        console.log (collision);
         if (collision) {
             console.log("collided");
-        
+            
         }
-            else{
+            else {
                 console.log(":)")
 
         }
-
-    
-        
-    
     }
-
-
 
     
 
@@ -103,29 +101,8 @@ class Runner {
         $('body').append ("<div id='" + this.id + "' class='runner' style='bottom:" + this.bottom + "px; left:" + this.left + "px; height: " + this.height + "px; width:" + this.width + "px; background-color:" + this.color + "'></div>");        
         this.id = "runner" + $(".runner").length;
 
-    }
-$(document).keydown(function(e) { 
-    console.log (e.which);
-    runner.move(e.which)
+    }}
 
-    }
-
-
-            
-            //console.log("runner-height",runner.height);
-            //console.log("runner-width",runner.width);
-            //console.log("runner-right",runner.left+runner.width);
-            //console.log("runner-bottom",runner.bottom);
-            //console.log("hurdle-height",Hurdle1.height);
-            //console.log("hurdle-width",Hurdle1.width);
-            //console.log("hurdle-left",Hurdle1.left);
-            //console.log("hurdle-bottom",Hurdle1.bottom);
-            //if (runner.left < Hurdle1.left + Hurdle1.width &&
-            //runner.left + runner.width > Hurdle1.left &&
-            //runner.bottom < Hurdle1.bottom + Hurdle1.height &&
-            //runner.bottom + runner.height > Hurdle1.bottom);
-                //$(document) .addClass();
-                //alert("You Lose!");
    
 
                     
@@ -137,7 +114,11 @@ var runner =  new Runner (10, 225, 150, 25, "blue");
 //var runner = new Runner (50, 371, 150, 25, "red");
 
 
+$(document).keydown(function(e) { 
+    console.log (e.which);
+    runner.move(e.which);
 
+    });
 
         
 console.log ("id",runner.id)
