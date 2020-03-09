@@ -1,3 +1,3 @@
-$('orange').click(function(){
+$('blue').click(function(){
     alert("asdadad");
 });
